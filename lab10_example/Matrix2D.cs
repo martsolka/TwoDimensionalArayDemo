@@ -26,6 +26,13 @@ namespace lab10_example
                     return matrix[i, j];
                 else throw new IndexOutOfRangeException("Індекс виходить за межі масиву!");
             }
-        }        
+        }
+        public void FillElementsRandom(int min, int max)
+        {
+            Random rand = new Random();
+            for (int i = 0; i < RowCount; i++)
+                for (int j = 0; j < ColCount; j++)
+                    matrix[i, j] = rand.Next(min, max + 1);
+        }
     }
 }
