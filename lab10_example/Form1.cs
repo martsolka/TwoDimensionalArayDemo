@@ -29,6 +29,25 @@ namespace lab10_example
         {
             
         }
+        
+        private void Print(Matrix2D matrix, DataTable dt)
+        {
+            int columns = matrix.ColCount;
+            int rows = matrix.RowCount;
+            for (int i = 0; i < columns; i++)
+            {
+                dt.Columns.Add(i.ToString(), typeof(double));
+            }
+            for (int row = 0; row < rows; row++)
+            {
+                DataRow dr = dt.NewRow();
+                for (int col = 0; col < columns; col++)
+                {
+                    dr[col] = matrix[row, col];
+                }
+                dt.Rows.Add(dr);
+            }
+        }
 
         private void dataGrid_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
