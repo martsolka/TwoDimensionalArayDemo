@@ -130,11 +130,10 @@
             // 
             // labelIndexPositivColumn
             // 
-            this.labelIndexPositivColumn.AutoSize = true;
             this.labelIndexPositivColumn.Font = new System.Drawing.Font("Arial Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIndexPositivColumn.Location = new System.Drawing.Point(12, 164);
+            this.labelIndexPositivColumn.Location = new System.Drawing.Point(12, 138);
             this.labelIndexPositivColumn.Name = "labelIndexPositivColumn";
-            this.labelIndexPositivColumn.Size = new System.Drawing.Size(251, 48);
+            this.labelIndexPositivColumn.Size = new System.Drawing.Size(251, 89);
             this.labelIndexPositivColumn.TabIndex = 9;
             this.labelIndexPositivColumn.Text = "№ першого позитивного \r\nстовпця -";
             // 

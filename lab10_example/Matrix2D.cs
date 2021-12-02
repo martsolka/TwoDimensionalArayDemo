@@ -28,6 +28,16 @@ namespace lab10_example
                 else throw new IndexOutOfRangeException("Індекс виходить за межі масиву!");
             }
         }
+        // Масив зі значеннями абсолютної суми елементів кожного рядка
+        public int[] AbsolutRowsSum
+        {
+            get
+            {
+                if (absolutRowsSum == null)
+                    СomputeAbsolutRowsSum();
+                return absolutRowsSum;
+            }
+        }
         public void FillElementsRandom(int min, int max)
         {
             Random rand = new Random();

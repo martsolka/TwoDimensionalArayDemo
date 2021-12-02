@@ -22,12 +22,41 @@ namespace lab10_example
 
         private void button_Sort_Click(object sender, EventArgs e)
         {
-            
+            DataTable dt = new DataTable();
+            matrix.SortRowsByCharacteristic();
+            Print(matrix, dt);
+            dataGrid2.DataSource = dt.DefaultView;
+            dataGrid2.ColumnHeadersVisible = false;
+            dataGrid2.AllowUserToAddRows = false;
         }
 
         private void buttonCreate_Click(object sender, EventArgs e)
         {
-            
+            int rows = int.Parse(textBoxRows.Text);
+            int cols = int.Parse(textBoxCols.Text);
+            matrix = new Matrix2D(rows, cols);
+            int max = int.Parse(textBoxMax.Text);
+            int min = int.Parse(textBoxMin.Text);
+            matrix.FillElementsRandom(min, max);
+            DataTable dt = new DataTable();
+            Print(matrix, dt);
+            dataGrid.DataSource = dt.DefaultView;
+            //dataGrid.ColumnHeadersVisible = false;
+            dataGrid.AllowUserToAddRows = false;
+            int columnIndex = matrix.IndexOfFirstPositiveColumn() + 1;
+            labelIndexPositivColumn.Text =
+
+            "Номер першого позитивного стовпця: " + columnIndex.ToString();
+            string res = "";
+            listBox1.Items.Clear();
+            listBox1.Items.Clear();
+            for (int i = 0; i < rows; i++)
+            {
+                res = "Рядок " + (i + 1).ToString() + ": сума = ";
+                res += (matrix.AbsolutRowsSum[i]).ToString();
+                listBox1.Items.Add(res);
+            }
+            button_Sort.Enabled = true;
         }
         
         private void Print(Matrix2D matrix, DataTable dt)
