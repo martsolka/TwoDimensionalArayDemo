@@ -65,6 +65,25 @@ namespace lab10_example
             }
             return -1;
         }
+        //Шукає перший стовпець, що містить лише від'ємні елементи
+        //повертає індекс стовпця або -1, якщо такого стовпця не знайдено
+        public int IndexOfFirstNegativeColumn()
+        {
+            for (int i = 0; i < ColCount; i++)
+            {
+                int negativeElementsCount = 0;
+                for (int j = 0; j < RowCount; j++)
+                {
+                    if (matrix[j, i] < 0)
+                        negativeElementsCount++;
+                    else
+                        break;
+                }
+                if (negativeElementsCount == RowCount)
+                    return i;
+            }
+            return -1;
+        }
         // Сортування рядків матриці за зростанням
         // суми абсолютних значень елементів рядків
         public void SortRowsByCharacteristic()
